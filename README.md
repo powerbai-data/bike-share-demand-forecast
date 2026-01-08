@@ -15,7 +15,7 @@ Key outcome: the SARIMA model captures short-term weekly seasonality well, but s
 ## Data
 - Source: Public bike-share trip records (CSV files).
 - Granularity: Trip-level records aggregated to daily demand.
-- Note: Raw CSV files are not included in this repo due to size. See [`data/README_data.md`](data/README_data.md) for instructions.
+- Note: Raw CSV files are not included in this repo due to size. See [`data/raw/README.md`](data/raw/README.md) for instructions.
 
 ---
 
