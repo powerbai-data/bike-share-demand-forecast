@@ -6,3 +6,5 @@ https://divvy-tripdata.s3.amazonaws.com/index.html
 
 Due to the large file size, the raw trip-level CSV files are not included in this repository.  
 Please download the required files directly from the link above if you wish to reproduce the analysis.
+
+Only the processed daily-level dataset is included in this repository for reproducibility.
