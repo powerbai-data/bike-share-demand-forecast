@@ -51,19 +51,56 @@ Key outcome: the SARIMA model captures short-term weekly seasonality well, but s
 ---
 
 ## Results (Figures)
-Place your exported figures in `reports/figures/` and update filenames if needed:
 
-- Daily demand + rolling mean  
-  ![](reports/figures/daily_demand_7day_rolling.png)
+Below are the key figures generated throughout the exploratory analysis and modeling process.
 
-- STL decomposition  
-  ![](reports/figures/stl_decomposition.png)
+### 1. Daily Demand with 7-Day Rolling Mean
+This figure shows the raw daily bike-share demand along with a 7-day rolling average, helping smooth short-term noise and highlight overall temporal patterns.
 
-- Residual diagnostics (Residuals + ACF)  
-  ![](reports/figures/sarima_residuals_acf.png)
+![Daily demand with rolling mean](reports/figures/daily_demand_7day_rolling.png)
 
-- Forecast vs Actual (Validation)  
-  ![](reports/figures/forecast_vs_actual.png)
+---
+
+### 2. STL Decomposition
+Seasonal-Trend decomposition using Loess (STL) is applied to separate the observed time series into:
+- Trend (long-term movement),
+- Seasonality (weekly cycle),
+- Residuals (unexplained noise).
+
+A weekly period (7 days) is specified based on domain knowledge of bike-share usage patterns.
+
+![STL decomposition](reports/figures/stl_decomposition.png)
+
+---
+
+### 3. Seasonal Pattern (Weekly Cycle)
+To make the weekly seasonality more interpretable, the seasonal component is aggregated by day of week.  
+This confirms a clear and consistent weekday–weekend usage pattern.
+
+![Weekly seasonality](reports/figures/weekly_seasonality.png)
+
+---
+
+### 4. SARIMA Residual Diagnostics
+The residuals from the fitted SARIMA model are examined to assess model adequacy.  
+The residual time series shows no obvious remaining structure.
+
+![SARIMA residuals](reports/figures/sarima_residuals.png)
+
+---
+
+### 5. Residual Autocorrelation (ACF)
+The autocorrelation function (ACF) of the residuals indicates that most lags fall within the confidence bounds, suggesting that the model has largely captured the temporal dependence in the data.
+
+![SARIMA residual ACF](reports/figures/sarima_residuals_acf.png)
+
+---
+
+### 6. Forecast vs Actual (Validation)
+The SARIMA model is evaluated on a held-out validation period.  
+The forecast captures the overall level and weekly seasonality, while uncertainty increases over the forecast horizon, as reflected by widening confidence intervals.
+
+![Forecast vs actual](reports/figures/forecast_vs_actual.png)
 
 ---
 
