@@ -127,4 +127,3 @@ The forecast captures the overall level and weekly seasonality, while uncertaint
 data/        raw and processed data (raw not included)
 notebooks/   analysis notebooks (01→03)
 reports/     exported figures for README
-src/         optional Python modules (if refactored)
